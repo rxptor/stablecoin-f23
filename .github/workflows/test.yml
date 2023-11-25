@@ -4,6 +4,7 @@ on: [workflow_dispatch, push, pull_request]
 
 env:
   FOUNDRY_PROFILE: ci
+  CI: false
 
 jobs:
 
@@ -22,7 +23,7 @@ jobs:
           forge --version
           forge fmt --check
         id: build
-        
+
   test:
     runs-on: ubuntu-latest
     steps:
